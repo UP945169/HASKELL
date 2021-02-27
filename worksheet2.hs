@@ -1,3 +1,8 @@
+absolute :: Int -> Int
+absolute x1
+    | x1 < 0 = -x1
+    | otherwise = x1
+
 sign :: Int -> Int
 sign x1
     | x1 < 0 = -1
@@ -13,6 +18,8 @@ howManyEqual x1 x2 x3
 --Fares start at £2.20; 50p is added for each kilometre
 --covered for the first 10 kilometres; 
 --and 30p is added foreach additional kilometre.
+
+
 
 howManyAboveAverage :: Int -> Int -> Int -> Int
 howManyAboveAverage x1 x2 x3 average
