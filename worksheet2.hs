@@ -19,14 +19,10 @@ howManyEqual x1 x2 x3
 --covered for the first 10 kilometres; 
 --and 30p is added foreach additional kilometre.
 
+taxiFare :: Int -> Float
+taxiFare x1
+    | otherwise = fromIntegral x1
 
-
-howManyAboveAverage :: Int -> Int -> Int -> Int
-howManyAboveAverage x1 x2 x3
-    | x1 > average = 1
-    | x1 && x2 > average = 2
-    | x1 && x3 > average = 2
-    | otherwise = 0
 
 --validDate :: Int -> Int -> Bool
 --validDate day month
