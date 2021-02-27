@@ -23,4 +23,5 @@ average = (x1 + x2 + x3)/3
     | otherwise = 0
 
 validDate :: Int -> Int -> Bool
-validDate      
+validDate day month
+    | 
