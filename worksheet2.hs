@@ -22,13 +22,12 @@ howManyEqual x1 x2 x3
 
 
 howManyAboveAverage :: Int -> Int -> Int -> Int
-howManyAboveAverage x1 x2 x3 average
-average = (x1 + x2 + x3)/3
+howManyAboveAverage x1 x2 x3
     | x1 > average = 1
     | x1 && x2 > average = 2
     | x1 && x3 > average = 2
     | otherwise = 0
 
-validDate :: Int -> Int -> Bool
-validDate day month
-    | 
+--validDate :: Int -> Int -> Bool
+--validDate day month
+--    | 
