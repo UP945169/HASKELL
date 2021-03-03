@@ -11,7 +11,7 @@ areaOfCircle r = pi * r^2
 
 
 volumeOfCylinder :: Float -> Float -> Float
-volumeOfCylinder r h = pi * r^2 * h) --- (h * areaOfCircle r)
+volumeOfCylinder r h = pi * r^2 * h --- (h * areaOfCircle r)
 
 
 distance :: Float -> Float -> Float -> Float -> Float

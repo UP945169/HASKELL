@@ -15,15 +15,13 @@ howManyEqual x1 x2 x3
     | x1 == x2 && x1 == x3 && x2 == x3 = 3
     | otherwise = 0
 
+
 --Fares start at £2.20; 50p is added for each kilometre
 --covered for the first 10 kilometres; 
 --and 30p is added foreach additional kilometre.
 
-taxiFare :: Int -> Float
-taxiFare x1
-    | otherwise = fromIntegral x1
-
-
---validDate :: Int -> Int -> Bool
---validDate day month
---    | 
+validDate :: Int -> Bool
+validDate x1
+    | x1 == 30
+    | x1 == 31 
+    | otherwise = 0
