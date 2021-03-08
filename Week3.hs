@@ -1,7 +1,8 @@
 -- We don't import '||' from the prelude, so that we can 
 -- define our own version
 
-import Prelude hiding ((||)) 
+import Prelude hiding ((||))
+import Prelude hiding ((&&))
 
 -- The following line declares the || operator (which we are about to
 -- re-define) to be right associative and to have precedence 2. This
@@ -43,3 +44,14 @@ divide :: Int -> Int -> Int
 divide n m
     | n < m         = 0
     | otherwise     = 1 + divide (n - m) m
+
+
+-- implementation of && and
+
+
+infixr 2 &&
+(&&) :: Bool -> Bool -> Bool
+False && False = False
+False && True = False
+True && False = False
+True && True = True
