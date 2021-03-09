@@ -66,3 +66,30 @@ ifThenElse :: Bool -> Int -> Int -> Int
 --ifThenElse x1 x2
 ifThenElse True x1 _ = x1
 ifThenElse False _ x2 = x2
+
+sumNumbers :: Int -> Int
+sumNumbers
+    | x == 0 = 0
+    | otherwise = sumNumbers(x + x)
+
+sumSquares :: Int -> Int
+sumSquares x 
+    | x == 0 = 0
+    | otherwise = sumSquares(x - 1 ) + x ^ 2
+
+power :: Int -> Int -> Int
+     power x n  |(n==1) = x
+              |even n = (power x ( div n 2))*(power x ( div n 2)) 
+              |odd n  = x * (power x (n-1))
+
+sumFromTo :: Int -> Int -> Int
+
+gcd :: Int -> Int -> Int
+
+intSquareRoot :: Int -> Int
+intSquareRoot n = findRoot n n
+
+findRoot :: Int -> Int -> Int
+findRoot n
+    | n*n > n   = intSquareRoot (n - 1) 
+    | n*n <= n  = n
