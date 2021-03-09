@@ -1,8 +1,7 @@
 -- We don't import '||' from the prelude, so that we can 
 -- define our own version
 
-import Prelude hiding ((||))
---import Prelude hiding ((&&))
+import Prelude hiding ((||),(&&),gcd)
 
 -- The following line declares the || operator (which we are about to
 -- re-define) to be right associative and to have precedence 2. This
@@ -51,15 +50,19 @@ divide n m
 
 infixr 3 &&
 (&&) :: Bool -> Bool -> Bool
-False && False = False
-False && True = False
-True && False = False
-True && True = True
+-- False && False = False
+-- False && True = False
+-- True && False = False
+-- True && True = True
+False && _ = False
+True && a = a
 
 exOr :: Bool -> Bool -> Bool
 exOr True  False = True
 exOr False True = True
 exOr _  _ = False
+-- 2 line answer for exOr. not is not gate
+
 
 
 ifThenElse :: Bool -> Int -> Int -> Int
@@ -68,9 +71,12 @@ ifThenElse True x1 _ = x1
 ifThenElse False _ x2 = x2
 
 sumNumbers :: Int -> Int
-sumNumbers
-    | x == 0 = 0
-    | otherwise = sumNumbers(x + x)
+-- sumNumbers
+--     | x == 0 = 0
+--     | otherwise = sumNumbers(x + x)
+sumNumbers 0 = 0
+sumNumbers n = sumNumber (n-1) + n
+
 
 sumSquares :: Int -> Int
 sumSquares x 
@@ -78,18 +84,26 @@ sumSquares x
     | otherwise = sumSquares(x - 1 ) + x ^ 2
 
 power :: Int -> Int -> Int
-     power x n  |(n==1) = x
-              |even n = (power x ( div n 2))*(power x ( div n 2)) 
-              |odd n  = x * (power x (n-1))
+power x n  
+        |(n==1) = x
+        |even n = (power x ( div n 2))*(power x ( div n 2)) 
+        |odd n  = x * (power x (n-1))
+-- 2^3 = 2*2^2
+-- check if power 0 0 returns 0 and check if powert 5 0 returns 1
+-- have 2 base cases for power
 
 sumFromTo :: Int -> Int -> Int
+-- use guards, base case where x==y
 
 gcd :: Int -> Int -> Int
+
 
 intSquareRoot :: Int -> Int
 intSquareRoot n = findRoot n n
 
 findRoot :: Int -> Int -> Int
-findRoot n
-    | n*n > n   = intSquareRoot (n - 1) 
-    | n*n <= n  = n
+findRoot n s
+    | s^2 > n   = intSquareRoot n (s+1)
+    | otherwise  = s
+
+-- check if it returns 5 for 26 and for 25
