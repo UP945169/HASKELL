@@ -2,7 +2,7 @@
 -- define our own version
 
 import Prelude hiding ((||))
-import Prelude hiding ((&&))
+--import Prelude hiding ((&&))
 
 -- The following line declares the || operator (which we are about to
 -- re-define) to be right associative and to have precedence 2. This
@@ -16,7 +16,7 @@ infixr 2  ||
 True || True    = True
 False || True   = True
 True || False   = True
-False || False  = Falsesn
+False || False  = False
 
 -- An alternative re-implementation
 --(||) :: Bool -> Bool -> Bool
@@ -49,20 +49,20 @@ divide n m
 -- implementation of && and
 
 
-infixr 2 &&
+infixr 3 &&
 (&&) :: Bool -> Bool -> Bool
 False && False = False
 False && True = False
 True && False = False
 True && True = True
 
-infixr 3    &&
-(&&) :: Bool -> Bool -> Bool -> Bool
-True && True && True = True
-False && False && False = False
-False && False && True  = False
-False && True && False  = False
-False && True && True  = False
-True && False && False  = False
-True && False && True  = False
-True && True && False = False
+exOr :: Bool -> Bool -> Bool
+exOr True  False = True
+exOr False True = True
+exOr _  _ = False
+
+
+ifThenElse :: Bool -> Int -> Int -> Int
+--ifThenElse x1 x2
+ifThenElse True x1 _ = x1
+ifThenElse False _ x2 = x2
