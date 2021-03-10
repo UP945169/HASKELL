@@ -62,8 +62,8 @@ exOr True  False = True
 exOr False True = True
 exOr _  _ = False
 -- 2 line answer for exOr. not is not gate
-
-
+exOr True a = a 
+exOr False _ = False
 
 ifThenElse :: Bool -> Int -> Int -> Int
 --ifThenElse x1 x2
@@ -91,6 +91,11 @@ power x n
 -- 2^3 = 2*2^2
 -- check if power 0 0 returns 0 and check if powert 5 0 returns 1
 -- have 2 base cases for power
+
+power2 :: Integer -> Integer -> Integer
+power2 n k | k < 0 = error "power: negative argument"
+power2 n 0 = 1
+power2 n k = n * power n (k-1) 
 
 sumFromTo :: Int -> Int -> Int
 -- use guards, base case where x==y
