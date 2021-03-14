@@ -97,6 +97,8 @@ power2 n k | k < 0 = error "power: negative argument"
 power2 n 0 = 1
 power2 n k = n * power n (k-1) 
 
+
+
 sumFromTo :: Int -> Int -> Int
 -- use guards, base case where x==y
 
