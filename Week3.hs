@@ -72,8 +72,6 @@ ifThenElse :: Bool -> Int -> Int -> Int
 --ifThenElse x1 x2
 ifThenElse True x1 _ = x1
 ifThenElse False _ x2 = x2
-<<<<<<< HEAD
-=======
 
 sumNumbers :: Int -> Int
 -- sumNumbers
@@ -119,4 +117,3 @@ findRoot n s
     | otherwise  = s
 
 -- check if it returns 5 for 26 and for 25
->>>>>>> 162fbde54dd0bfde7e5493d42e128a4a270bbf5e

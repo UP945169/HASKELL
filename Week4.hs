@@ -27,8 +27,6 @@ minAndMax x y
     | x <= y            = (x,y)
     | otherwise         = (y,x)
 
-<<<<<<< HEAD
-=======
 
 
 --our work
@@ -40,6 +38,41 @@ betterStudentlongForm (std1, grd1) (std2, grd2)
 
 
 sumDifference :: Int -> Int -> (Int,Int)
-sumDifference x y
-    | 
->>>>>>> 02b67eb5fe1ca25e6cf50376e4015315b430d755
+sumDifference x y = (x+y,x-y)
+
+grade :: StudentMark -> Char
+grade (s1,m1)
+    | m1 >= 70 = 'A'
+    | m1 >= 60 = 'B'
+    | m1 >= 50 = 'C'
+    | m1 >= 40 = 'D'
+    | otherwise = 'F'
+
+capMark :: StudentMark -> StudentMark
+capMark (st1, gr1)
+    | gr1 > 40 = (st1, 40)
+    | otherwise = (st1,gr1)
+
+firstNumbers :: Int -> [Int]
+firstNumbers x = [1..x]
+
+--firstSquares :: Int -> [Int]
+--firstSquares x = [ [i^2 | i <- [array] ]
+
+capitalise :: String -> String
+--capitalise (x:xs) = toUpper x :xs
+capitalise = map toUpper
+
+
+duplicate :: String -> Int -> String
+duplicate s num
+    | num == 0 = s 
+    | otherwise = s ++ duplicate s(num-1)
+
+
+divisors :: Int -> [Int]
+divisors n = [x | x <- [1..n], n ‘mod‘ x == 0] 
+
+isprime :: Int -> Bool
+isprime n = divisors n == [1,n]
+
