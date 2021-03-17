@@ -56,22 +56,23 @@ capMark (st1, gr1)
 firstNumbers :: Int -> [Int]
 firstNumbers x = [1..x]
 
---firstSquares :: Int -> [Int]
---firstSquares x = [ [i^2 | i <- [array] ]
+firstSquares :: Int -> [Int]
+firstSquares x = [ i^2 | i <- firstNumbers x ]
 
 capitalise :: String -> String
 --capitalise (x:xs) = toUpper x :xs
-capitalise = map toUpper
+capitalise = map toUpper -- use a list comprehension
 
 
 duplicate :: String -> Int -> String
 duplicate s num
-    | num == 0 = s 
-    | otherwise = s ++ duplicate s(num-1)
+    | num == 0 = s  -- ""
+    | otherwise = s ++ duplicate s (num-1)
 
 
 divisors :: Int -> [Int]
-divisors n = [x | x <- [1..n], n ‘mod‘ x == 0] 
+divisors n = [x | x <- [1..n], n `mod` x == 0]
+
 
 isprime :: Int -> Bool
 isprime n = divisors n == [1,n]
